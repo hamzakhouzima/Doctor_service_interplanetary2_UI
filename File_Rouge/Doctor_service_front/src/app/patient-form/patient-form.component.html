@@ -1,0 +1,218 @@
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+  <div formGroupName="demographics">
+    <label for="age">Age:</label>
+    <input type="number" formControlName="age" id="age">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="demographics">
+    <label for="gender">Gender:</label>
+    <input type="text" formControlName="gender" id="gender">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="demographics">
+    <label for="ethnicity">Ethnicity:</label>
+    <input type="text" formControlName="ethnicity" id="ethnicity">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="demographics">
+
+    <div for="region" formGroupName="location">
+      <label for="region">Region:</label>
+      <input type="text" formControlName="country" id="country">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <!-- Add validation errors display here if needed -->
+  </div>
+
+  <div formGroupName="demographics" >
+    <div for="region" formGroupName="location">
+      <label for="region">Region:</label>
+      <input type="text" formControlName="region" id="region">
+    <!-- Add validation errors display here if needed -->
+    </div>
+  </div>
+  <div formGroupName="medicalHistory">
+    <label for="familyHistoryHeartDisease">Family History of Heart Disease:</label>
+    <input type="checkbox" formControlName="familyHistoryHeartDisease" id="familyHistoryHeartDisease">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="medicalHistory">
+    <label for="existingConditions">Existing Conditions:</label>
+    <input type="text" formControlName="existingConditions" id="existingConditions">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="medicalHistory">
+    <label for="previousSurgeries">Previous Surgeries:</label>
+    <input type="text" formControlName="previousSurgeries" id="previousSurgeries">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="medicalHistory">
+    <label for="medications">Medications:</label>
+    <input type="text" formControlName="medications" id="medications">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="vitalSigns">
+    <div formGroupName="bloodPressure">
+      <label for="systolic">Systolic:</label>
+      <input type="number" formControlName="systolic" id="systolic">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="bloodPressure">
+      <label for="diastolic">Diastolic:</label>
+      <input type="number" formControlName="diastolic" id="diastolic">
+      <!-- Add validation errors display here if needed -->
+    </div>
+  </div>
+  <div formGroupName="vitalSigns">
+    <div formGroupName="heartRate">
+      <label for="resting">Resting Heart Rate:</label>
+      <input type="number" formControlName="resting" id="resting">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="heartRate">
+      <label for="exercise">Exercise Heart Rate:</label>
+      <input type="number" formControlName="exercise" id="exercise">
+      <!-- Add validation errors display here if needed -->
+    </div>
+  </div>
+  <div formGroupName="vitalSigns">
+    <label for="respiratoryRate">Respiratory Rate:</label>
+    <input type="number" formControlName="respiratoryRate" id="respiratoryRate">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <div formGroupName="vitalSigns">
+    <label for="bmi">BMI:</label>
+    <input type="number" formControlName="bmi" id="bmi">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <!-- Add other form fields similarly -->
+  <div formGroupName="laboratoryTests">
+    <div formGroupName="lipidProfile">
+      <label for="totalCholesterol">Total Cholesterol:</label>
+      <input type="number" formControlName="totalCholesterol" id="totalCholesterol">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="lipidProfile">
+      <label for="ldl">LDL:</label>
+      <input type="number" formControlName="ldl" id="ldl">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="lipidProfile">
+      <label for="hdl">HDL:</label>
+      <input type="number" formControlName="hdl" id="hdl">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="lipidProfile">
+      <label for="triglycerides">Triglycerides:</label>
+      <input type="number" formControlName="triglycerides" id="triglycerides">
+      <!-- Add validation errors display here if needed -->
+    </div>
+  </div>
+  <div formGroupName="laboratoryTests">
+    <div formGroupName="bloodSugar">
+      <label for="fasting">Fasting Blood Sugar:</label>
+      <input type="number" formControlName="fasting" id="fasting">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="bloodSugar">
+      <label for="postprandial">Postprandial Blood Sugar:</label>
+      <input type="number" formControlName="postprandial" id="postprandial">
+      <!-- Add validation errors display here if needed -->
+    </div>
+  </div>
+  <div formGroupName="laboratoryTests">
+    <div formGroupName="electrolytes">
+      <label for="potassium">Potassium:</label>
+      <input type="number" formControlName="potassium" id="potassium">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="electrolytes">
+      <label for="sodium">Sodium:</label>
+      <input type="number" formControlName="sodium" id="sodium">
+      <!-- Add validation errors display here if needed -->
+    </div>
+    <div formGroupName="electrolytes">
+      <label for="chloride">Chloride:</label>
+      <input type="number" formControlName="chloride" id="chloride">
+      <!-- Add validation errors display here if needed -->
+    </div>
+  </div>
+  <div formGroupName="laboratoryTests">
+    <label for="crp">CRP:</label>
+    <input type="number" formControlName="crp" id="crp">
+    <!-- Add validation errors display here if needed -->
+  </div>
+  <!-- Add other form fields similarly -->
+  <div formGroupName="heartData">
+    <!-- Include data structures for ECG, ECHO, stress test, and coronary scan here -->
+    <!-- Add input fields or nested form groups as needed -->
+  </div>
+
+  <div formGroupName="lifestyle">
+    <label for="smokingStatus">Smoking Status:</label>
+    <input type="text" formControlName="smokingStatus" id="smokingStatus">
+    <!-- Add validation errors display here if needed -->
+
+    <div formGroupName="alcoholConsumption">
+      <label for="alcoholFrequency">Alcohol Frequency:</label>
+      <input type="text" formControlName="frequency" id="alcoholFrequency">
+      <!-- Add validation errors display here if needed -->
+
+      <label for="alcoholAmount">Alcohol Amount:</label>
+      <input type="number" formControlName="amount" id="alcoholAmount">
+      <!-- Add validation errors display here if needed -->
+    </div>
+
+    <div formGroupName="physicalActivity">
+      <label for="physicalFrequency">Physical Activity Frequency:</label>
+      <input type="text" formControlName="frequency" id="physicalFrequency">
+      <!-- Add validation errors display here if needed -->
+
+      <label for="physicalDuration">Physical Activity Duration:</label>
+      <input type="text" formControlName="duration" id="physicalDuration">
+      <!-- Add validation errors display here if needed -->
+    </div>
+
+    <label for="diet">Diet:</label>
+    <input type="text" formControlName="diet" id="diet">
+    <!-- Add validation errors display here if needed -->
+  </div>
+
+  <div formGroupName="contactInformation">
+    <label for="firstName">First Name:</label>
+    <input type="text" formControlName="first_name" id="firstName">
+    <!-- Add validation errors display here if needed -->
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" formControlName="last_name" id="lastName">
+    <!-- Add validation errors display here if needed -->
+
+    <label for="primaryPhone">Primary Phone:</label>
+    <input type="tel" formControlName="primaryPhone" id="primaryPhone">
+    <!-- Add validation errors display here if needed -->
+
+    <label for="secondaryPhone">Secondary Phone:</label>
+    <input type="tel" formControlName="secondaryPhone" id="secondaryPhone">
+    <!-- Add validation errors display here if needed -->
+
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email" id="email">
+    <!-- Add validation errors display here if needed -->
+
+    <div formGroupName="emergencyContact">
+      <label for="emergencyName">Emergency Contact Name:</label>
+      <input type="text" formControlName="name" id="emergencyName">
+      <!-- Add validation errors display here if needed -->
+
+      <label for="emergencyPhone">Emergency Contact Phone:</label>
+      <input type="tel" formControlName="phone" id="emergencyPhone">
+      <!-- Add validation errors display here if needed -->
+
+      <label for="emergencyRelationship">Emergency Contact Relationship:</label>
+      <input type="text" formControlName="relationship" id="emergencyRelationship">
+      <!-- Add validation errors display here if needed -->
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="patientForm.invalid">Submit</button>
+</form>

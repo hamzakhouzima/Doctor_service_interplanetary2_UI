@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 import {KeycloakService} from "keycloak-angular";
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,16 @@ export class OperationService {
 
 
   saveData(data: any): Observable<any> {
-console.log('service post request method running .....')
-    return this.http.post<any>('http://localhost:8000/api/interplanetary2/AddPatient', data);
+    console.log('service post request method running .....')
+    const token = this.keycloakService.getToken();
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.post<any>('http://localhost:8000/api/interplanetary2/AddPatient', data , { headers })
+      .pipe(
+        catchError(error => {
+          console.error('Error occurred:', error);
+          return throwError('An error occurred while saving data.');
+        })
+      );
   }
   // onSubmit() {
   //   OperationService.addPatient();

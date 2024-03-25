@@ -6,6 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { OperationComponent } from "./operation/operation.component";
 import { LoginComponent } from './login/login.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { PatientFormComponent } from './patient-form/patient-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 // Function to initialize Keycloak
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -29,13 +31,15 @@ function initializeKeycloak(keycloak: KeycloakService) {
   declarations: [
     AppComponent,
     OperationComponent,
-    LoginComponent
+    LoginComponent,
+    PatientFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     KeycloakAngularModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {
