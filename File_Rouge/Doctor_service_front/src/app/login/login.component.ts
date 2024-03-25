@@ -18,5 +18,7 @@ export class LoginComponent {
       }
     });
   }
-
+  logout() {
+    this.keycloakService.logout();
+  }
 }
