@@ -1,0 +1,49 @@
+<div>
+  <input type="text" [(ngModel)]="searchCID" placeholder="Enter CID">
+  <button (click)="searchPatient()">Search</button>
+</div>
+
+<!-- Display patient data or a message if not found -->
+<div *ngIf="patientData">
+  <!-- Previous sections -->
+
+<!--  <h2>Vital Signs</h2>-->
+<!--  <p>Blood Pressure: {{ patientData.vitalSigns.bloodPressure.systolic }} / {{ patientData.vitalSigns.bloodPressure.diastolic }}</p>-->
+<!--  <p>Heart Rate: Resting - {{ patientData.vitalSigns.heartRate.resting }}, Exercise - {{ patientData.vitalSigns.heartRate.exercise }}</p>-->
+<!--  <p>Respiratory Rate: {{ patientData.vitalSigns.respiratoryRate }}</p>-->
+<!--  <p>BMI: {{ patientData.vitalSigns.bmi }}</p>-->
+
+<!--  <h2>Laboratory Tests</h2>-->
+<!--  <div *ngIf="patientData.laboratoryTests">-->
+<!--    <p>Lipid Profile:</p>-->
+<!--    <ul>-->
+<!--      <li>Total Cholesterol: {{ patientData.laboratoryTests.lipidProfile.totalCholesterol }}</li>-->
+<!--      <li>LDL: {{ patientData.laboratoryTests.lipidProfile.ldl }}</li>-->
+<!--      <li>HDL: {{ patientData.laboratoryTests.lipidProfile.hdl }}</li>-->
+<!--      <li>Triglycerides: {{ patientData.laboratoryTests.lipidProfile.triglycerides }}</li>-->
+<!--    </ul>-->
+<!--    <p>Blood Sugar: Fasting - {{ patientData.laboratoryTests.bloodSugar.fasting }}, Postprandial - {{ patientData.laboratoryTests.bloodSugar.postprandial }}</p>-->
+<!--    &lt;!&ndash; Add other laboratory tests here &ndash;&gt;-->
+<!--  </div>-->
+
+<!--  <h2>Contact Information</h2>-->
+<!--  <p>Primary Phone: {{ patientData.contactInformation.primaryPhone }}</p>-->
+<!--  <p>Secondary Phone: {{ patientData.contactInformation.secondaryPhone }}</p>-->
+<!--  <p>Email: {{ patientData.contactInformation.email }}</p>-->
+<!--  <p>Emergency Contact: {{ patientData.contactInformation.emergencyContact.name }} - {{ patientData.contactInformation.emergencyContact.phone }}</p>-->
+  <h2>Demographics</h2>
+  <p>Age: {{ patientData?.demographics?.age }}</p>
+  <!-- Add null checks for other demographics properties -->
+
+  <h2>Medical History</h2>
+  <p>Family History of Heart Disease: {{ patientData?.medicalHistory?.familyHistoryHeartDisease ? 'Yes' : 'No' }}</p>
+  <!-- Add null checks for other medical history properties -->
+
+  <h2>Vital Signs</h2>
+  <p>Blood Pressure: {{ patientData?.vitalSigns?.bloodPressure?.systolic }} / {{ patientData?.vitalSigns?.bloodPressure?.diastolic }}</p>
+  <!-- Add null checks for other vital signs properties -->
+
+</div>
+<ng-template #notFoundTemplate>
+  <p>No patient data found.</p>
+</ng-template>
