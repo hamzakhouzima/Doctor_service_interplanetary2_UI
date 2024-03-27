@@ -1,8 +1,9 @@
 <div *ngIf="patientData">
-<!--  <h2>Patient Information{{ patientData | json }}</h2>-->
+  <h2>Patient Information</h2>
+
   <div>
     <h3>Demographics</h3>
-    <p>Age: {{ patientData?.demographics.age }}</p>
+    <p>Age: {{ patientData?.demographics?.age }}</p>
     <p>Gender: {{ patientData?.demographics?.gender }}</p>
     <p>Ethnicity: {{ patientData?.demographics?.ethnicity }}</p>
     <p>Location: {{ patientData?.demographics?.location?.country }}, {{ patientData?.demographics?.location?.region }}</p>
@@ -16,5 +17,42 @@
     <p>Medications: {{ patientData?.medicalHistory?.medications?.length > 0 ? patientData?.medicalHistory?.medications?.join(', ') : 'None' }}</p>
   </div>
 
-  <!-- Add similar sections for vital signs, laboratory tests, lifestyle, and contact information -->
+  <div>
+    <h3>Vital Signs</h3>
+    <p>Blood Pressure: {{ patientData?.vitalSigns?.bloodPressure?.systolic }}/{{ patientData?.vitalSigns?.bloodPressure?.diastolic }}</p>
+    <p>Heart Rate (Resting): {{ patientData?.vitalSigns?.heartRate?.resting }}</p>
+    <p>Heart Rate (Exercise): {{ patientData?.vitalSigns?.heartRate?.exercise }}</p>
+    <p>Respiratory Rate: {{ patientData?.vitalSigns?.respiratoryRate }}</p>
+    <p>BMI: {{ patientData?.vitalSigns?.bmi }}</p>
+  </div>
+
+  <div>
+    <h3>Laboratory Tests</h3>
+    <p>Total Cholesterol: {{ patientData?.laboratoryTests?.lipidProfile?.totalCholesterol }}</p>
+    <p>LDL: {{ patientData?.laboratoryTests?.lipidProfile?.ldl }}</p>
+    <p>HDL: {{ patientData?.laboratoryTests?.lipidProfile?.hdl }}</p>
+    <p>Triglycerides: {{ patientData?.laboratoryTests?.lipidProfile?.triglycerides }}</p>
+    <p>Blood Sugar (Fasting): {{ patientData?.laboratoryTests?.bloodSugar?.fasting }}</p>
+    <p>Blood Sugar (Postprandial): {{ patientData?.laboratoryTests?.bloodSugar?.postprandial }}</p>
+    <p>Potassium: {{ patientData?.laboratoryTests?.electrolytes?.potassium }}</p>
+    <p>Sodium: {{ patientData?.laboratoryTests?.electrolytes?.sodium }}</p>
+    <p>Chloride: {{ patientData?.laboratoryTests?.electrolytes?.chloride }}</p>
+    <p>CRP: {{ patientData?.laboratoryTests?.crp }}</p>
+  </div>
+
+  <div>
+    <h3>Lifestyle</h3>
+    <p>Smoking Status: {{ patientData?.lifestyle?.smokingStatus }}</p>
+    <p>Alcohol Consumption: Frequency - {{ patientData?.lifestyle?.alcoholConsumption?.frequency }}, Amount - {{ patientData?.lifestyle?.alcoholConsumption?.amount }}</p>
+    <p>Physical Activity: Frequency - {{ patientData?.lifestyle?.physicalActivity?.frequency }}, Duration - {{ patientData?.lifestyle?.physicalActivity?.duration }}</p>
+    <p>Diet: {{ patientData?.lifestyle?.diet }}</p>
+  </div>
+
+  <div>
+    <h3>Contact Information</h3>
+    <p>Primary Phone: {{ patientData?.contactInformation?.primaryPhone }}</p>
+    <p>Secondary Phone: {{ patientData?.contactInformation?.secondaryPhone }}</p>
+    <p>Email: {{ patientData?.contactInformation?.email }}</p>
+    <p>Emergency Contact: Name - {{ patientData?.contactInformation?.emergencyContact?.name }}, Phone - {{ patientData?.contactInformation?.emergencyContact?.phone }}, Relationship - {{ patientData?.contactInformation?.emergencyContact?.relationship }}</p>
+  </div>
 </div>

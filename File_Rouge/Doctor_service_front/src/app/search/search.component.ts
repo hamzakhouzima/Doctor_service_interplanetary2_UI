@@ -36,8 +36,12 @@ export class SearchComponent {
         next: (data: any) => {
           // Update patient data in the service
           this.patientDataService.updatePatientData(data.body.patientData);
-          // Navigate to patient data component
-          this.router.navigate(['/patient-data']);
+          if(data.body.patientData){
+            localStorage.setItem('patientData',data.body.patientData );
+            // JSON.stringify(data.body.patientData)
+            this.router.navigate(['/patient-data']);
+
+          }
         },
         error: (error: any) => {
           console.error(error);
