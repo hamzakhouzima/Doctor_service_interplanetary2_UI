@@ -9,6 +9,7 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { PatientFormComponent } from './patient-form/patient-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SearchComponent } from './search/search.component';
+import { PatientDataComponent } from './patient-data/patient-data.component';
 
 // Function to initialize Keycloak
 function initializeKeycloak(keycloak: KeycloakService) {
@@ -34,7 +35,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     OperationComponent,
     LoginComponent,
     PatientFormComponent,
-    SearchComponent
+    SearchComponent,
+    PatientDataComponent
   ],
   imports: [
     BrowserModule,

@@ -1,37 +1,48 @@
 import { Component } from '@angular/core';
-import {SearchService} from "../services/search.service";
+import { Router } from '@angular/router';
+import { SearchService } from "../services/search.service";
+import {PatientDataService} from "../services/patient-data.service";
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html'
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
   searchCID: string = '';
-  patientData: any = null;
 
-  constructor(private searchService: SearchService) {}
+  // constructor(private searchService: SearchService, private router: Router) {}
+  //
+  // searchPatient() {
+  //   if (this.searchCID) {
+  //     this.searchService.searchPatient(this.searchCID).subscribe({
+  //       next: (data: any) => {
+  //         // Pass patient data to patient data component
+  //         this.router.navigate(['/patient-data'], { state: { patientData: data.body.patientData } });
+  //
+  //         console.log(data.body.patientData);
+  //       },
+  //       error: (error: any) => {
+  //         console.error('search component says! : '+error);
+  //       }
+  //     });
+  //   }
+  // }
+  constructor(private searchService: SearchService, private router: Router, private patientDataService: PatientDataService) {}
 
   searchPatient() {
     if (this.searchCID) {
       this.searchService.searchPatient(this.searchCID).subscribe({
         next: (data: any) => {
-          if (data && data.body.patientData) {
-            const cleanedData = data.body.patientData.replace(/\\r\\n/g, '').replace(/\\n/g, '').replace(/\\r/g, '');
-
-            console.log(cleanedData);
-
-            this.patientData = JSON.parse(cleanedData);
-          } else {
-            console.error('Patient data is empty.');
-            this.patientData = null; // Reset or handle as needed
-          }
+          // Update patient data in the service
+          this.patientDataService.updatePatientData(data.body.patientData);
+          // Navigate to patient data component
+          this.router.navigate(['/patient-data']);
         },
         error: (error: any) => {
           console.error(error);
-          this.patientData = null; // Reset or handle as needed
         }
       });
     }
   }
-
 }

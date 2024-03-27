@@ -3,8 +3,9 @@
   <button (click)="searchPatient()">Search</button>
 </div>
 
+
 <!-- Display patient data or a message if not found -->
-<div *ngIf="patientData">
+<!--<div *ngIf="patientData">-->
   <!-- Previous sections -->
 
 <!--  <h2>Vital Signs</h2>-->
@@ -31,19 +32,24 @@
 <!--  <p>Secondary Phone: {{ patientData.contactInformation.secondaryPhone }}</p>-->
 <!--  <p>Email: {{ patientData.contactInformation.email }}</p>-->
 <!--  <p>Emergency Contact: {{ patientData.contactInformation.emergencyContact.name }} - {{ patientData.contactInformation.emergencyContact.phone }}</p>-->
-  <h2>Demographics</h2>
-  <p>Age: {{ patientData?.demographics?.age }}</p>
-  <!-- Add null checks for other demographics properties -->
 
-  <h2>Medical History</h2>
-  <p>Family History of Heart Disease: {{ patientData?.medicalHistory?.familyHistoryHeartDisease ? 'Yes' : 'No' }}</p>
-  <!-- Add null checks for other medical history properties -->
 
-  <h2>Vital Signs</h2>
-  <p>Blood Pressure: {{ patientData?.vitalSigns?.bloodPressure?.systolic }} / {{ patientData?.vitalSigns?.bloodPressure?.diastolic }}</p>
-  <!-- Add null checks for other vital signs properties -->
 
-</div>
+
+
+  <!--  <h2>Demographics</h2>-->
+<!--  <p>Age: {{ patientData?.demographics?.age }}</p>-->
+<!--  &lt;!&ndash; Add null checks for other demographics properties &ndash;&gt;-->
+
+<!--  <h2>Medical History</h2>-->
+<!--  <p>Family History of Heart Disease: {{ patientData?.medicalHistory?.familyHistoryHeartDisease ? 'Yes' : 'No' }}</p>-->
+<!--  &lt;!&ndash; Add null checks for other medical history properties &ndash;&gt;-->
+
+<!--  <h2>Vital Signs</h2>-->
+<!--  <p>Blood Pressure: {{ patientData?.vitalSigns?.bloodPressure?.systolic }} / {{ patientData?.vitalSigns?.bloodPressure?.diastolic }}</p>-->
+<!--  &lt;!&ndash; Add null checks for other vital signs properties &ndash;&gt;-->
+
+<!--</div>-->
 <ng-template #notFoundTemplate>
   <p>No patient data found.</p>
 </ng-template>

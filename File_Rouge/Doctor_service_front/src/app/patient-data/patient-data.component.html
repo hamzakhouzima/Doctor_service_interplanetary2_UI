@@ -1,0 +1,20 @@
+<div *ngIf="patientData">
+<!--  <h2>Patient Information{{ patientData | json }}</h2>-->
+  <div>
+    <h3>Demographics</h3>
+    <p>Age: {{ patientData?.demographics.age }}</p>
+    <p>Gender: {{ patientData?.demographics?.gender }}</p>
+    <p>Ethnicity: {{ patientData?.demographics?.ethnicity }}</p>
+    <p>Location: {{ patientData?.demographics?.location?.country }}, {{ patientData?.demographics?.location?.region }}</p>
+  </div>
+
+  <div>
+    <h3>Medical History</h3>
+    <p>Family History of Heart Disease: {{ patientData?.medicalHistory?.familyHistoryHeartDisease ? 'Yes' : 'No' }}</p>
+    <p>Existing Conditions: {{ patientData?.medicalHistory?.existingConditions?.length > 0 ? patientData?.medicalHistory?.existingConditions?.join(', ') : 'None' }}</p>
+    <p>Previous Surgeries: {{ patientData?.medicalHistory?.previousSurgeries?.length > 0 ? patientData?.medicalHistory?.previousSurgeries?.join(', ') : 'None' }}</p>
+    <p>Medications: {{ patientData?.medicalHistory?.medications?.length > 0 ? patientData?.medicalHistory?.medications?.join(', ') : 'None' }}</p>
+  </div>
+
+  <!-- Add similar sections for vital signs, laboratory tests, lifestyle, and contact information -->
+</div>
