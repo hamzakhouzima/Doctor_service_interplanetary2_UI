@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { Observable } from 'rxjs';
 
+
+const headers : HttpHeaders = new HttpHeaders({
+  'Content-Type': 'application/json'
+});
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class SearchService {
+
 
   constructor(private http: HttpClient) {}
 
@@ -15,4 +22,13 @@ export class SearchService {
     }
     throw new Error('CID is required');
   }
+
+  searchByEmail(email: string): Observable<any> {
+    const emailData = { email: email };
+
+    // Send the email data as JSON in the request body
+    return this.http.post(`http://localhost:8000/api/interplanetary2/patient/`, JSON.stringify(emailData), { headers });
+  }
+
+
 }

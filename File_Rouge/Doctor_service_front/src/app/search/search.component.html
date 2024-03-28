@@ -1,55 +1,37 @@
-<div>
-  <input type="text" [(ngModel)]="searchCID" placeholder="Enter CID">
-  <button (click)="searchPatient()">Search</button>
+<!--<div>-->
+<!--  <input type="text" [(ngModel)]="searchCID" placeholder="Enter CID">-->
+<!--  <button (click)="searchPatient()">Search</button>-->
+<!--</div>-->
+
+
+
+  <header>
+    <ul>
+      <li><a class="links" href="/dashboard"><button class="signbutton" type="button">New Medical Record</button></a></li>
+      <li><a href="/dashboard"><img class="grid" src="https://cdn3.iconfinder.com/data/icons/navigation-and-settings/24/Material_icons-01-11-512.png" title="Google apps"></a></li>
+      <li><a href="#images">Images</a></li>
+      <li><a href="#gmail">Gmail</a></li>
+    </ul>
+  </header>
+  <div class="logo">
+    <img alt="Google" src="/assets/ipfslogo.png">
+  </div>
+  <div class="bar">
+    <input class="searchbar" type="text" title="Search" [(ngModel)]="searchCID" placeholder="Enter CID">
+    <img class="voice" src="/assets/search.svg" title="Search by Voice" (click)="searchPatient()">
+  </div>
+
+<div class="bar">
+  <input class="searchbar" type="text" title="Search" [(ngModel)]="email" placeholder="Enter email">
+  <img class="voice" src="/assets/search.svg" title="Search by Voice" (click)="searchByEmail()">
 </div>
 
-
-<!-- Display patient data or a message if not found -->
-<!--<div *ngIf="patientData">-->
-  <!-- Previous sections -->
-
-<!--  <h2>Vital Signs</h2>-->
-<!--  <p>Blood Pressure: {{ patientData.vitalSigns.bloodPressure.systolic }} / {{ patientData.vitalSigns.bloodPressure.diastolic }}</p>-->
-<!--  <p>Heart Rate: Resting - {{ patientData.vitalSigns.heartRate.resting }}, Exercise - {{ patientData.vitalSigns.heartRate.exercise }}</p>-->
-<!--  <p>Respiratory Rate: {{ patientData.vitalSigns.respiratoryRate }}</p>-->
-<!--  <p>BMI: {{ patientData.vitalSigns.bmi }}</p>-->
-
-<!--  <h2>Laboratory Tests</h2>-->
-<!--  <div *ngIf="patientData.laboratoryTests">-->
-<!--    <p>Lipid Profile:</p>-->
-<!--    <ul>-->
-<!--      <li>Total Cholesterol: {{ patientData.laboratoryTests.lipidProfile.totalCholesterol }}</li>-->
-<!--      <li>LDL: {{ patientData.laboratoryTests.lipidProfile.ldl }}</li>-->
-<!--      <li>HDL: {{ patientData.laboratoryTests.lipidProfile.hdl }}</li>-->
-<!--      <li>Triglycerides: {{ patientData.laboratoryTests.lipidProfile.triglycerides }}</li>-->
-<!--    </ul>-->
-<!--    <p>Blood Sugar: Fasting - {{ patientData.laboratoryTests.bloodSugar.fasting }}, Postprandial - {{ patientData.laboratoryTests.bloodSugar.postprandial }}</p>-->
-<!--    &lt;!&ndash; Add other laboratory tests here &ndash;&gt;-->
+<!--  <div class="buttons">-->
+<!--    <button class="button" type="button">Google Search</button>-->
+<!--    <button class="button" type="button">I'm Feeling Lucky</button>-->
 <!--  </div>-->
 
-<!--  <h2>Contact Information</h2>-->
-<!--  <p>Primary Phone: {{ patientData.contactInformation.primaryPhone }}</p>-->
-<!--  <p>Secondary Phone: {{ patientData.contactInformation.secondaryPhone }}</p>-->
-<!--  <p>Email: {{ patientData.contactInformation.email }}</p>-->
-<!--  <p>Emergency Contact: {{ patientData.contactInformation.emergencyContact.name }} - {{ patientData.contactInformation.emergencyContact.phone }}</p>-->
 
-
-
-
-
-  <!--  <h2>Demographics</h2>-->
-<!--  <p>Age: {{ patientData?.demographics?.age }}</p>-->
-<!--  &lt;!&ndash; Add null checks for other demographics properties &ndash;&gt;-->
-
-<!--  <h2>Medical History</h2>-->
-<!--  <p>Family History of Heart Disease: {{ patientData?.medicalHistory?.familyHistoryHeartDisease ? 'Yes' : 'No' }}</p>-->
-<!--  &lt;!&ndash; Add null checks for other medical history properties &ndash;&gt;-->
-
-<!--  <h2>Vital Signs</h2>-->
-<!--  <p>Blood Pressure: {{ patientData?.vitalSigns?.bloodPressure?.systolic }} / {{ patientData?.vitalSigns?.bloodPressure?.diastolic }}</p>-->
-<!--  &lt;!&ndash; Add null checks for other vital signs properties &ndash;&gt;-->
-
-<!--</div>-->
 <ng-template #notFoundTemplate>
   <p>No patient data found.</p>
 </ng-template>

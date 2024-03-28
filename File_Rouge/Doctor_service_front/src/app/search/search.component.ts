@@ -29,6 +29,8 @@ export class SearchComponent {
   //   }
   // }
   constructor(private searchService: SearchService, private router: Router, private patientDataService: PatientDataService) {}
+  email: string = '';
+  patientData: any;
 
   searchPatient() {
     if (this.searchCID) {
@@ -49,4 +51,28 @@ export class SearchComponent {
       });
     }
   }
+
+
+  searchByEmail() {
+    if (this.email) {
+      this.searchService.searchByEmail(this.email).subscribe({
+        next: (data: any) => {
+          const patientData = JSON.parse(data.patientData); // Parse patientData string
+          this.patientDataService.updatePatientData(patientData);
+          if (patientData) {
+            localStorage.setItem('patientData', JSON.stringify(patientData));
+            this.router.navigate(['/patient-data']);
+            console.log(patientData);
+          }
+        },
+        error: (error: any) => {
+          console.error(error);
+        }
+      });
+    }
+  }
+
+
+
+
 }
