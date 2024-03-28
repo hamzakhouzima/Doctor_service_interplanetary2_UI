@@ -11,23 +11,9 @@ import {PatientDataService} from "../services/patient-data.service";
 export class SearchComponent {
   searchCID: string = '';
 
-  // constructor(private searchService: SearchService, private router: Router) {}
-  //
-  // searchPatient() {
-  //   if (this.searchCID) {
-  //     this.searchService.searchPatient(this.searchCID).subscribe({
-  //       next: (data: any) => {
-  //         // Pass patient data to patient data component
-  //         this.router.navigate(['/patient-data'], { state: { patientData: data.body.patientData } });
-  //
-  //         console.log(data.body.patientData);
-  //       },
-  //       error: (error: any) => {
-  //         console.error('search component says! : '+error);
-  //       }
-  //     });
-  //   }
-  // }
+  emailBar : Boolean = false;
+  CIDBar : Boolean = true;
+
   constructor(private searchService: SearchService, private router: Router, private patientDataService: PatientDataService) {}
   email: string = '';
   patientData: any;
@@ -70,6 +56,17 @@ export class SearchComponent {
         }
       });
     }
+  }
+
+  showEmailBar(){
+    this.emailBar = true;
+    this.CIDBar = false;
+
+    console.log(""+this.emailBar);
+  }
+  showCIDBar(){
+    this.emailBar = false;
+    this.CIDBar = true;
   }
 
 

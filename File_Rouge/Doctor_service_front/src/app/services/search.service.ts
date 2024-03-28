@@ -25,8 +25,6 @@ export class SearchService {
 
   searchByEmail(email: string): Observable<any> {
     const emailData = { email: email };
-
-    // Send the email data as JSON in the request body
     return this.http.post(`http://localhost:8000/api/interplanetary2/patient/`, JSON.stringify(emailData), { headers });
   }
 

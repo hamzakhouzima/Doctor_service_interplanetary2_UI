@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { OperationService } from '../services/operation.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-patient-form',
@@ -9,8 +10,9 @@ import { OperationService } from '../services/operation.service';
 })
 export class PatientFormComponent implements OnInit {
   patientForm!: FormGroup;
+  // private route: any;
 
-  constructor(private fb: FormBuilder, private operationService: OperationService) { }
+  constructor(private fb: FormBuilder, private operationService: OperationService , private router: Router) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -148,4 +150,12 @@ export class PatientFormComponent implements OnInit {
       this.medications!.removeAt(index);
     }
   }
+
+
+
+  navigateToSearch(): void {
+    this.router.navigate(['/search']);
+
+  }
+
 }

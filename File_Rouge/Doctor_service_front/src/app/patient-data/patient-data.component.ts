@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientDataService } from '../services/patient-data.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-patient-data',
@@ -9,7 +10,7 @@ import { PatientDataService } from '../services/patient-data.service';
 export class PatientDataComponent implements OnInit {
   patientData: any;
 
-  constructor(private patientDataService: PatientDataService) {}
+  constructor(private patientDataService: PatientDataService , private router: Router) {}
 
   // ngOnInit(): void {
   //   this.patientDataService.currentPatientData.subscribe(data => {
@@ -33,4 +34,12 @@ export class PatientDataComponent implements OnInit {
       console.error('Patient Data is not available in local storage.');
     }
   }
+
+  navigateToSearch(): void {
+    this.router.navigate(['/search']);
+
+  }
+
+
+
 }

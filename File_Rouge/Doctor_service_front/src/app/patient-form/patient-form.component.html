@@ -1,3 +1,6 @@
+
+<button   (click)="navigateToSearch()" class="button-30">Back To Search!</button>
+
 <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
   <div formGroupName="demographics">
     <label for="age">Age:</label>
@@ -214,5 +217,6 @@
     </div>
   </div>
 
-  <button type="submit" [disabled]="patientForm.invalid">Submit</button>
+  <button type="submit" (click)="navigateToSearch()" [disabled]="patientForm.invalid" class="button-30">Submit</button>
 </form>
+

@@ -1,7 +1,10 @@
-<div *ngIf="patientData">
-  <h2>Patient Information</h2>
 
-  <div>
+
+<h2 class="title">Patient Information</h2>
+<div *ngIf="patientData" class="patient-container">
+<!--  <h2 class="title">Patient Information</h2>-->
+
+  <div class="patient-section">
     <h3>Demographics</h3>
     <p>Age: {{ patientData?.demographics?.age }}</p>
     <p>Gender: {{ patientData?.demographics?.gender }}</p>
@@ -9,7 +12,18 @@
     <p>Location: {{ patientData?.demographics?.location?.country }}, {{ patientData?.demographics?.location?.region }}</p>
   </div>
 
-  <div>
+
+
+
+  <div class="patient-section">
+    <h3>Contact Information</h3>
+    <p>Primary Phone: {{ patientData?.contactInformation?.primaryPhone }}</p>
+    <p>Secondary Phone: {{ patientData?.contactInformation?.secondaryPhone }}</p>
+    <p>Email: {{ patientData?.contactInformation?.email }}</p>
+    <p>Emergency Contact: Name - {{ patientData?.contactInformation?.emergencyContact?.name }}, Phone - {{ patientData?.contactInformation?.emergencyContact?.phone }}, Relationship - {{ patientData?.contactInformation?.emergencyContact?.relationship }}</p>
+  </div>
+
+  <div class="patient-section">
     <h3>Medical History</h3>
     <p>Family History of Heart Disease: {{ patientData?.medicalHistory?.familyHistoryHeartDisease ? 'Yes' : 'No' }}</p>
     <p>Existing Conditions: {{ patientData?.medicalHistory?.existingConditions?.length > 0 ? patientData?.medicalHistory?.existingConditions?.join(', ') : 'None' }}</p>
@@ -17,7 +31,7 @@
     <p>Medications: {{ patientData?.medicalHistory?.medications?.length > 0 ? patientData?.medicalHistory?.medications?.join(', ') : 'None' }}</p>
   </div>
 
-  <div>
+  <div class="patient-section">
     <h3>Vital Signs</h3>
     <p>Blood Pressure: {{ patientData?.vitalSigns?.bloodPressure?.systolic }}/{{ patientData?.vitalSigns?.bloodPressure?.diastolic }}</p>
     <p>Heart Rate (Resting): {{ patientData?.vitalSigns?.heartRate?.resting }}</p>
@@ -26,7 +40,7 @@
     <p>BMI: {{ patientData?.vitalSigns?.bmi }}</p>
   </div>
 
-  <div>
+  <div class="patient-section">
     <h3>Laboratory Tests</h3>
     <p>Total Cholesterol: {{ patientData?.laboratoryTests?.lipidProfile?.totalCholesterol }}</p>
     <p>LDL: {{ patientData?.laboratoryTests?.lipidProfile?.ldl }}</p>
@@ -40,7 +54,7 @@
     <p>CRP: {{ patientData?.laboratoryTests?.crp }}</p>
   </div>
 
-  <div>
+  <div class="patient-section">
     <h3>Lifestyle</h3>
     <p>Smoking Status: {{ patientData?.lifestyle?.smokingStatus }}</p>
     <p>Alcohol Consumption: Frequency - {{ patientData?.lifestyle?.alcoholConsumption?.frequency }}, Amount - {{ patientData?.lifestyle?.alcoholConsumption?.amount }}</p>
@@ -48,11 +62,6 @@
     <p>Diet: {{ patientData?.lifestyle?.diet }}</p>
   </div>
 
-  <div>
-    <h3>Contact Information</h3>
-    <p>Primary Phone: {{ patientData?.contactInformation?.primaryPhone }}</p>
-    <p>Secondary Phone: {{ patientData?.contactInformation?.secondaryPhone }}</p>
-    <p>Email: {{ patientData?.contactInformation?.email }}</p>
-    <p>Emergency Contact: Name - {{ patientData?.contactInformation?.emergencyContact?.name }}, Phone - {{ patientData?.contactInformation?.emergencyContact?.phone }}, Relationship - {{ patientData?.contactInformation?.emergencyContact?.relationship }}</p>
-  </div>
+
 </div>
+<button   (click)="navigateToSearch()" class="button-30">Back To Search!</button>
