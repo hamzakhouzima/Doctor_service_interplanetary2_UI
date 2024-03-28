@@ -4,13 +4,14 @@
 <!--</div>-->
 
 
-
   <header>
     <ul>
       <li><a class="links" href="/dashboard"><button class="signbutton" type="button">New Medical Record</button></a></li>
-      <li><a href="/dashboard"><img class="grid" src="https://cdn3.iconfinder.com/data/icons/navigation-and-settings/24/Material_icons-01-11-512.png" title="Google apps"></a></li>
-      <li><a href="#images">Images</a></li>
-      <li><a href="#gmail">Gmail</a></li>
+<!--      <li><a href="/dashboard"><img class="grid" src="https://cdn3.iconfinder.com/data/icons/navigation-and-settings/24/Material_icons-01-11-512.png" title="Google apps"></a></li>-->
+<!--      <li><a href="#images">Images</a></li>-->
+      <li><a href="#gmail">
+        <app-login></app-login>
+      </a></li>
     </ul>
   </header>
   <div class="logo">
@@ -26,7 +27,16 @@
   <img class="voice" src="/assets/search.svg" title="Search by Voice" (click)="searchByEmail()">
 </div>
 
-<button  *ngIf="CIDBar" (click)="showEmailBar()" class="button-30">Search by Email</button>
+
+
+<!--<div class="bar" *ngIf="   ">-->
+<!--  <h1>makaynch</h1>-->
+<!--</div>-->
+
+
+<!--<button  *ngIf="CIDBar" (click)="showEmailBar()" class="button-30">Search by Email</button>-->
+<button *ngIf="CIDBar" (click)="showEmailBar()" class="button-30">Search by Email</button>
+
 <button  *ngIf="emailBar" (click)="showCIDBar()"  class="button-30">Search by Cid</button>
 
 

@@ -5,13 +5,18 @@ import {OperationComponent} from "./operation/operation.component";
 import {PatientDataComponent} from "./patient-data/patient-data.component";
 import {PatientFormComponent} from "./patient-form/patient-form.component";
 import {SearchComponent} from "./search/search.component";
+import {AuthGuard} from "./guard/auth.guard";
 
 const routes: Routes = [
 
-  {path:'login',component:LoginComponent},
-  {path:'dashboard',component:PatientFormComponent},
-  {path:'search',component:SearchComponent},
-  { path: 'patient-data', component: PatientDataComponent }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: PatientFormComponent, canActivate: [AuthGuard] },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
+  { path: 'patient-data', component: PatientDataComponent, canActivate: [AuthGuard] },
+  // { path: 'protected', component: ProtectedComponent, canActivate: [AuthGuard] },
+  // { path: '**', component: PageNotFoundComponent }  // Uncomment this for handling 404 pages
+  // { path: 'protected-route', component: ProtectedComponent, canActivate: [AuthGuard] }
 
 ];
 

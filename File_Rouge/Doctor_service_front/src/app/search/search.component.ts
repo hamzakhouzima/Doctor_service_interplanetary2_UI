@@ -17,6 +17,7 @@ export class SearchComponent {
   constructor(private searchService: SearchService, private router: Router, private patientDataService: PatientDataService) {}
   email: string = '';
   patientData: any;
+  DataAvailability: Boolean = false;
 
   searchPatient() {
     if (this.searchCID) {
@@ -29,7 +30,10 @@ export class SearchComponent {
             // JSON.stringify(data.body.patientData)
             this.router.navigate(['/patient-data']);
 
+
+
           }
+
         },
         error: (error: any) => {
           console.error(error);
