@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+#  mysql:
+#    image: mysql
+#    environment:
+#      MYSQL_DATABASE: sway3i-v3
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_PASSWORD: root
+#
+#    ports:
+#      - "3306:3306"
+
+  backend:
+    build:
+      context: ./InterPlanetary2
+      dockerfile: dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/ipfsMetaData?createDatabaseIfNotExist=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+#    depends_on:
+#      - mysql
+
+  frontend:
+    build:
+      context: ./Doctor_service_front
+      dockerfile: dockerfile
+    ports:
+      - "4200:4200"
+  api-gateway2:
+    build:
+      context: ./path/to/api-gateway2
+      dockerfile: dockerfile
+    ports:
+      - "8765:8765"
+  discoveryServer:
+    build:
+      context: ./path/to/discoveryserver
+      dockerfile: dockerfile
+    ports:
+      - "8761:8761"

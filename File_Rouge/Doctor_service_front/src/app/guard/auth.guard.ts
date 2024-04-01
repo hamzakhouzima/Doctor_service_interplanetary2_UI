@@ -16,13 +16,16 @@ export class AuthGuard implements CanActivate {
     try {
       const loggedIn = await this.keycloakService.isLoggedIn();
       if (loggedIn) {
+
+         // this.router.navigate(['/search']);
+
         return true;
       }
-      // Redirect to login page if not logged in
+      // redirect to login page if not logged in
       await this.router.navigate(['/login']);
       return false;
     } catch (error) {
-      // Handle error or redirect to login
+      // handle error or redirect to login
       await this.router.navigate(['/login']);
       return false;
     }

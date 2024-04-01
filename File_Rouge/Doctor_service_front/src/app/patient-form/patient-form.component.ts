@@ -154,6 +154,7 @@ export class PatientFormComponent implements OnInit {
 
 
   navigateToSearch(): void {
+    // operationService.
     this.router.navigate(['/search']);
 
   }

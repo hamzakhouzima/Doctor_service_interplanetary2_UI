@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {OAuthLogger, OAuthService} from 'angular-oauth2-oidc';
+// import {OAuthLogger, OAuthService} from 'angular-oauth2-oidc';
 import {KeycloakService} from "keycloak-angular";
 
 @Component({

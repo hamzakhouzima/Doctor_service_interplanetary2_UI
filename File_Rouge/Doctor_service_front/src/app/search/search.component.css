@@ -36,7 +36,7 @@ li a:hover {
 .logo{
   margin-top:200px;
   margin-bottom:20px;
-  margin-left:22cm;
+  margin-left:23cm;
 }
 .bar{
   margin:0 auto;
@@ -95,6 +95,7 @@ li a:hover {
 
                                                      /* CSS */
                                                    .button-30 {
+                                                     margin-left: 1cm;
                                                      align-items: center;
                                                      appearance: none;
                                                      background-color: #c0ffcc;
@@ -140,9 +141,62 @@ li a:hover {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 .button-30{
+  display: inline-block; /* Ensures the buttons are treated as inline-block elements, allowing for margin, padding, etc. */
+  cursor: pointer; /* Changes the cursor to pointer to indicate it's clickable */
+  text-align: center;
   margin-top: 20px;
   margin-left: 22.5cm;
 }
 
 
+
+
+/*""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+header nav ul {
+  list-style: none; /* Removes the default list styling */
+  padding: 0; /* Removes the default padding */
+  margin: 0; /* Removes the default margin */
+  display: flex; /* Enables flexbox layout for the <ul>, making its children (<li>) align horizontally */
+  align-items: center; /* Centers the items vertically */
+  justify-content: start; /* Aligns items to the start of the flex container */
+}
+
+header nav ul li {
+  margin-right: 10px; /* Adds some space between the list items */
+}
+
+
+.logout-button {
+  margin-top: 10px;
+  padding: 10px 20px; /* Adjust padding to control the size of the button */
+  background-color: #f44336; /* Red background for the logout button to indicate an action */
+  color: #ffffff; /* White text color */
+  border: none; /* No border for a modern look */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  font-size: 16px; /* Adjust font size as needed */
+  font-weight: bold; /* Makes the text bold */
+  text-transform: uppercase; /* Makes the text uppercase for emphasis */
+  outline: none; /* Removes the outline to keep the modern look */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Darker shade of red on hover for feedback */
+}
+
+.logout-button:focus {
+  box-shadow: 0 0 0 2px rgba(211,47,47, 0.5); /* Adds a glow effect when the button is focused */
+}
